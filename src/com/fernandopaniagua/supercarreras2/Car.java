@@ -3,11 +3,11 @@ package com.fernandopaniagua.supercarreras2;
 import java.awt.image.BufferedImage;
 
 public class Car {
-    String nombre;
-    BufferedImage sprite;
-    float speed;
-    float xPos;
-    float yPos;
+    private String nombre;
+    private BufferedImage sprite;
+    private float speed;
+    private float xPos;
+    private float yPos;
 
     public Car(String nombre, BufferedImage sprite, float speed, float xPos, float yPos) {
         this.nombre = nombre;
