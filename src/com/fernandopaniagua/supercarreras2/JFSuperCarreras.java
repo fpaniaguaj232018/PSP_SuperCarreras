@@ -16,7 +16,7 @@ public class JFSuperCarreras extends javax.swing.JFrame {
      */
     public JFSuperCarreras() {
         initComponents();
-        setBounds(0,0,1000,600);
+        setBounds(0,0,800,400);
     }
 
     /**
@@ -66,6 +66,9 @@ public class JFSuperCarreras extends javax.swing.JFrame {
 
     private void jbArrancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbArrancarActionPerformed
         //NECESITO LLAMAR AL ARRANCAR DE LOS COCHES.
+        jPCircuito1.getF1().arrancar(jPCircuito1);
+        jPCircuito1.getF2().arrancar(jPCircuito1);
+        jPCircuito1.getF3().arrancar(jPCircuito1);
     }//GEN-LAST:event_jbArrancarActionPerformed
 
     /**

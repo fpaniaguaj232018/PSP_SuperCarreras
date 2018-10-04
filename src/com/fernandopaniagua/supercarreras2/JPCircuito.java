@@ -17,18 +17,50 @@ import javax.imageio.ImageIO;
  */
 public class JPCircuito extends javax.swing.JPanel {
 
-    Car f1;
-    Car f2;
-    Car f3;
+    public static final int META = 700;
+    
+    private Car f1;
+    private Car f2;
+    private Car f3;
+    
+    private CircuitoPainter cp;
+    
+    public Car getF1() {
+        return f1;
+    }
+
+    public Car getF2() {
+        return f2;
+    }
+
+    public Car getF3() {
+        return f3;
+    }
     
     public JPCircuito() {
         try {
             initComponents();
+            float speed = 0.5f;
             BufferedImage sprite1
                 = ImageIO.read(
                     new File(
                     JPCircuito.class.getResource("/sprites/f1.png").getFile()));
-            f1 = new Car("TORRENTE", sprite1, 10f, 10f, 0.001f);
+            f1 = new Car("C1", sprite1, speed, 10f, 25f);
+            
+            BufferedImage sprite2
+                = ImageIO.read(
+                    new File(
+                    JPCircuito.class.getResource("/sprites/f2.png").getFile()));
+            f2 = new Car("C2", sprite2, speed, 10f, 125f);
+            
+            BufferedImage sprite3
+                = ImageIO.read(
+                    new File(
+                    JPCircuito.class.getResource("/sprites/f3.png").getFile()));
+            f3 = new Car("C3", sprite3, speed, 10f, 225f);
+            
+            cp = new CircuitoPainter(this);
+            cp.start();
         } catch (Exception e){
             System.out.println("Error de ejecución");
             e.printStackTrace();
@@ -37,12 +69,16 @@ public class JPCircuito extends javax.swing.JPanel {
 
     @Override
     public void paint(Graphics g) {
+        super.paint(g);
         Graphics2D g2g = (Graphics2D)g;
-        g2g.drawImage(f1.getSprite(), (int)f1.getxPos(), (int)f1.getyPos(), 150, 50, null);
+        g2g.drawImage(f1.getSprite(), (int)f1.getxPos(), (int)f1.getyPos(), 
+                150, 50, null);
+        g2g.drawImage(f2.getSprite(), (int)f2.getxPos(), (int)f2.getyPos(), 
+                150, 50, null);
+        g2g.drawImage(f3.getSprite(), (int)f3.getxPos(), (int)f3.getyPos(), 
+                150, 50, null);
     }
 
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,7 +100,8 @@ public class JPCircuito extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+  
+
 }
