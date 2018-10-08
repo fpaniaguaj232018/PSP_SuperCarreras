@@ -1,8 +1,5 @@
 package com.fernandopaniagua.supercarreras2;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class CircuitoPainter extends Thread {
     private JPCircuito jpc;
     public CircuitoPainter(JPCircuito jpc){
@@ -14,7 +11,7 @@ public class CircuitoPainter extends Thread {
         while(true){
             try {
                 jpc.repaint();
-                sleep(30);
+                sleep(16);
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }

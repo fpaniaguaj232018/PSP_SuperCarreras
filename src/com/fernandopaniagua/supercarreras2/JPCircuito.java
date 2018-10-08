@@ -40,7 +40,7 @@ public class JPCircuito extends javax.swing.JPanel {
     public JPCircuito() {
         try {
             initComponents();
-            float speed = 0.5f;
+            float speed = 1f;
             BufferedImage sprite1
                 = ImageIO.read(
                     new File(
